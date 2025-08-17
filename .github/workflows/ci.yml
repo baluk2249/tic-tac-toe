@@ -11,15 +11,15 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: ./backend/game
+        working-directory: ./backend
     steps:
       - uses: actions/checkout@v4
       - name: Set up Go
         uses: actions/setup-go@v5
         with:
-          go-version: '1.20'
+          go-version: '1.22'
       - name: Run Go tests
-        run: go test -v
+        run: go test -v .game/
 
   frontend-test:
     runs-on: ubuntu-latest
